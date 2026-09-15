@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Retail Management System</title> <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-light"> 
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container"> <a class="navbar-brand fw-bold" href="index.html"> Retail Management </a> <button
+                class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"> <span
+                    class="navbar-toggler-icon"></span> </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"> <a class="nav-link active" href="index.html"> Dashboard </a> </li>
+                    <li class="nav-item"> <a class="nav-link" href="products.html"> Products </a> </li>
+                    <li class="nav-item"> <a class="nav-link" href="sales.html"> Sales </a> </li>
+                </ul> <a href="login.html" class="btn btn-light me-2"> Login </a> <a href="register.html"
+                    class="btn btn-outline-light"> Register </a>
+            </div>
+        </div>
+    </nav> 
+    <!-- MAIN CONTENT -->
+    <div class="container mt-4">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <div>
+                <h2>Dashboard</h2>
+                <p class="text-muted"> Welcome to your retail management system. </p>
+            </div>
+        </div> <!-- STATISTICS -->
+        <div class="row g-4 mb-4">
+            <div class="col-md-3">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h6 class="text-muted">Total Products</h6>
+                        <h2>250</h2> <span class="text-success">Products in stock</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h6 class="text-muted">Today's Sales</h6>
+                        <h2>KSh 48,500</h2> <span class="text-success">Today's revenue</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h6 class="text-muted">Total Orders</h6>
+                        <h2>45</h2> <span class="text-muted">Orders today</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h6 class="text-muted">Low Stock</h6>
+                        <h2 class="text-danger">8</h2> <span class="text-danger">Needs attention</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row"> 
+            <!-- RECENT SALES TABLE -->
+            <div class="col-md-8">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-white">
+                        <h5 class="mb-0">Recent Sales</h5>
+                    </div>
+                    <div class="card-body table-responsive">
+                        <table class="table table-hover">
+                            <thead class="table-primary">
+                                <tr>
+                                    <th>Invoice</th>
+                                    <th>Customer</th>
+                                    <th>Amount</th>
+                                    <th>Payment</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>INV001</td>
+                                    <td>John Kamau</td>
+                                    <td>KSh 5,500</td>
+                                    <td>M-Pesa</td>
+                                    <td> <span class="badge bg-success"> Paid </span> </td>
+                                </tr>
+                                <tr>
+                                    <td>INV002</td>
+                                    <td>Mary Wanjiku</td>
+                                    <td>KSh 8,200</td>
+                                    <td>Cash</td>
+                                    <td> <span class="badge bg-success"> Paid </span> </td>
+                                </tr>
+                                <tr>
+                                    <td>INV003</td>
+                                    <td>Peter Mwangi</td>
+                                    <td>KSh 3,400</td>
+                                    <td>Card</td>
+                                    <td> <span class="badge bg-warning text-dark"> Pending </span> </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div> 
+            <!-- QUICK SALE FORM -->
+            <div class="col-md-4">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-white">
+                        <h5 class="mb-0">Quick Sale</h5>
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="mb-3"> <label class="form-label"> Product </label> <select class="form-select">
+                                    <option>Select Product</option>
+                                    <option>Rice 5kg</option>
+                                    <option>Cooking Oil 2L</option>
+                                    <option>Milk 500ml</option>
+                                </select> </div>
+                            <div class="mb-3"> <label class="form-label"> Quantity </label> <input type="number"
+                                    class="form-control" min="1" value="1"> </div>
+                            <div class="mb-3"> <label class="form-label"> Payment Method </label> <select
+                                    class="form-select">
+                                    <option>Cash</option>
+                                    <option>M-Pesa</option>
+                                    <option>Card</option>
+                                </select> </div> <button type="submit" class="btn btn-primary w-100"> Record Sale
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"> </script>
+</body>
