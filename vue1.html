@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        {{external}}
+        <br><br><br>
+        {{intro}}
+
+        <ul>
+            <li v-for="stock in ibm_stock">{{stock}}</li>
+        </ul>
+
+    </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.2.0/vue.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.25.0/axios.js"></script>
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            external: "Testing APIS",
+            intro: "welcome APIS",
+            ibm_stock:[]
+        },
+        methods: {
+            intro_method() {
+                this.intro = "update.by.method"
+            },
+
+             async ibm_stock_call() {
+                //make asyncronous request
+                const results = await axios.get("https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=IBM&interval=5min&apikey=demo")
+                console.log(results.data["Time Series (5min)"])
+                this.ibm_stock= results.data["Time Series (5min)"]
+
+
+        }
+    },
+        mounted(){
+        this.intro_method();
+        this.ibm_stock_call();
+
+    }
+});
+
+</script>
+
+</html>
